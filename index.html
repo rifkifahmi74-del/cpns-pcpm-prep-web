@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+  <title>Latihan Soal CPNS &amp; PCPM BI 2026</title>
+  <meta name="description" content="Latihan soal CPNS (SKD) & PCPM Bank Indonesia: materi, simulasi ujian bertimer, dan pembahasan per soal. Gaya Apple, gratis, bisa offline." />
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)" />
+
+  <!-- PWA / installable -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Latihan CPNS/BI" />
+  <link rel="icon" type="image/png" href="icon-192.png" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- top navigation -->
+  <nav class="nav">
+    <div class="nav-in">
+      <button id="backBtn" class="back-btn hidden">‹ Kembali</button>
+      <div class="brand" id="brand">
+        <span class="logo">✓</span>
+        <span>Latihan CPNS &amp; BI</span>
+      </div>
+    </div>
+  </nav>
+
+  <main id="app"><!-- views render here --></main>
+
+  <!-- data (bank soal & konfigurasi) -->
+  <script src="data/config.js"></script>
+  <script src="data/cpns.js"></script>
+  <script src="data/pcpm.js"></script>
+  <!-- app -->
+  <script src="app.js"></script>
+
+  <!-- service worker for offline / installable -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function () {
+        navigator.serviceWorker.register('sw.js').catch(function(){});
+      });
+    }
+  </script>
+</body>
+</html>
