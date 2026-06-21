@@ -1,5 +1,5 @@
 /* ============================================================
-   CPNS & PCPM BI — Latihan Soal  ·  app logic (vanilla JS)
+   CPNS & PCPM BI - Latihan Soal  ·  app logic (vanilla JS)
    Alur: Materi pembelajaran → Ujian (bertimer) → Pembahasan per soal
    ============================================================ */
 (function(){
@@ -35,12 +35,41 @@
     t.textContent=msg; t.classList.add('show'); clearTimeout(t._t); t._t=setTimeout(()=>t.classList.remove('show'),2200);
   }
 
-  /* ---------- view router ---------- */
-  function setView(node, showBack){
+  /* ---------- motion + interaction helpers ---------- */
+  const reduceMotion = ()=> matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const haptic = (ms=7)=>{ if(navigator.vibrate && !reduceMotion()){ try{navigator.vibrate(ms);}catch(e){} } };
+  const TILE = ['#0a84ff','#30b0c7','#34c759','#ff9f0a','#ff375f','#bf5af2','#5e5ce6','#ff453a']; // iOS Settings-style icon tiles
+  function staggerKids(container){ if(!container) return; [...container.children].forEach((c,i)=>{ c.classList.add('stagger'); c.style.setProperty('--i', i); }); }
+  function countUp(el, to, suffix, dur=900){
+    if(!el) return;
+    if(reduceMotion()){ el.textContent=to+(suffix||''); return; }
+    const start=performance.now();
+    const tick=now=>{ const t=Math.min(1,(now-start)/dur); el.textContent=Math.round(to*(1-Math.pow(1-t,3)))+(suffix||''); if(t<1)requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  }
+
+  /* ---------- view router (Apple-style view transitions) ---------- */
+  function setView(node, showBack, after){
     clearTimers();
-    app.innerHTML=''; app.appendChild(node);
-    const back=$('#backBtn'); back.classList.toggle('hidden', !showBack);
-    window.scrollTo({top:0,behavior:'instant'});
+    const swap=()=>{
+      app.innerHTML=''; app.appendChild(node);
+      const back=$('#backBtn'); back.classList.toggle('hidden', !showBack);
+      window.scrollTo({top:0,behavior:'instant'});
+      if(after) after();
+    };
+    if(document.startViewTransition && !reduceMotion()) document.startViewTransition(swap);
+    else swap();
+  }
+
+  // animate the results ring, score bars, and count-up number once the view is shown
+  function animateResults(pct){
+    const dbl = fn => requestAnimationFrame(()=>requestAnimationFrame(fn)); // ensure initial paint before transition
+    const ring=$('.ring-prog');
+    if(ring){ const C=parseFloat(ring.dataset.c), final=C*(1-pct/100);
+      if(reduceMotion()) ring.style.strokeDashoffset=final; else dbl(()=>{ ring.style.strokeDashoffset=final; }); }
+    document.querySelectorAll('.score-row .bar>i[data-w]').forEach(b=>{
+      const w=b.dataset.w; if(reduceMotion()) b.style.width=w+'%'; else dbl(()=>{ b.style.width=w+'%'; }); });
+    countUp($('.ring-wrap .pct b'), pct, '%', 1000);
   }
 
   /* ====================== HOME ====================== */
@@ -69,7 +98,7 @@
         <div class="exam-card" style="--ac:${ex.accent}">
           <div class="ribbon"></div>
           <span class="pill">${esc(ex.short)}</span>
-          <h3>${esc(ex.name.split('—')[0].trim())}</h3>
+          <h3>${esc(ex.name.split('-')[0].trim())}</h3>
           <p>${esc(ex.tagline)}</p>
           <div class="meta">
             <div>${ex.categories.length} subtes</div>
@@ -80,6 +109,7 @@
       card.onclick=()=>renderExam(ex.id);
       grid.appendChild(card);
     });
+    staggerKids(grid);
     v.appendChild(grid);
     v.appendChild(footer());
     setView(v,false);
@@ -98,7 +128,7 @@
                <div class="cd-unit"><b data-u="m">00</b><span>Menit</span></div>
                <div class="cd-unit"><b data-u="s">00</b><span>Detik</span></div>
              </div>`
-          : `<div class="cd-wait">⏳ Menunggu jadwal resmi — belum diumumkan.</div>` }
+          : `<div class="cd-wait">⏳ Menunggu jadwal resmi - belum diumumkan.</div>` }
         <a class="src" href="${esc(cd.source.url)}" target="_blank" rel="noopener">${esc(cd.source.label)} ↗</a>
       </div>`);
     return card;
@@ -149,7 +179,7 @@
 
     v.appendChild(h(`<div class="section-title">Latihan per Subtes</div>`));
     const list=h(`<div class="cat-list"></div>`);
-    ex.categories.forEach(cat=>{
+    ex.categories.forEach((cat,idx)=>{
       const best=getBest(examId,cat.id);
       const item=h(`
         <div class="cat-item">
@@ -165,8 +195,10 @@
           <div class="chev">›</div>
         </div>`);
       item.onclick=()=>renderCategory(examId,cat.id);
+      const tile=item.querySelector('.cat-emoji'); if(tile) tile.style.setProperty('--tile', TILE[idx % TILE.length]);
       list.appendChild(item);
     });
+    staggerKids(list);
     v.appendChild(list);
     v.appendChild(footer());
     setView(v,true);
@@ -274,7 +306,7 @@
       t.textContent='⏱ '+fmtClock(left);
       t.classList.toggle('warn',left<=120&&left>30);
       t.classList.toggle('danger',left<=30);
-      if(left<=0){ clearTimers(); toast('Waktu habis — otomatis dikumpulkan'); finishSession(); }
+      if(left<=0){ clearTimers(); toast('Waktu habis - otomatis dikumpulkan'); finishSession(); }
     };
     upd(); timerId=setInterval(upd,500);
   }
@@ -284,8 +316,8 @@
     $('#qcount').textContent=`${i+1} / ${S.items.length}`;
     $('#progBar').style.width=(S.answers.filter(a=>a!=null).length/S.items.length*100)+'%';
 
-    const card=h(`<div class="card q-card view"></div>`);
-    card.appendChild(h(`<div class="q-num">${S.mode!=='category'?esc(it.catName)+' · ':''}Soal ${i+1}${it.type==='tkp'?' · TKP (skor 1–5)':''}${it.type==='fig'?' · Figural':''}</div>`));
+    const card=h(`<div class="card q-card"></div>`);
+    card.appendChild(h(`<div class="q-num">${S.mode!=='category'?esc(it.catName)+' · ':''}Soal ${i+1}${it.type==='tkp'?' · TKP (skor 1-5)':''}${it.type==='fig'?' · Figural':''}</div>`));
     card.appendChild(h(`<div class="q-text">${esc(it.q)}</div>`));
     if(it.img) card.appendChild(h(`<div class="q-img">${it.img}</div>`));
     const opts=h(`<div class="opts ${it.type==='fig'?'grid2':''}"></div>`);
@@ -293,7 +325,7 @@
     it.opts.forEach((o,oi)=>{
       const sel=S.answers[i]===oi;
       const op=h(`<div class="opt ${sel?'sel':''}"><div class="mark">${sel?'✓':letters[oi]}</div><div class="otext">${optContent(o)}</div></div>`);
-      op.onclick=()=>{ S.answers[i]=oi; drawQuestion(); };
+      op.onclick=()=>{ haptic(); S.answers[i]=oi; drawQuestion(); };
       opts.appendChild(op);
     });
     card.appendChild(opts);
@@ -389,16 +421,17 @@
     const pct=Math.round(r.totPct);
     const verdict = r.overallPass===null ? {cls:'neutral',txt:'Selesai!'} : (r.overallPass?{cls:'pass',txt:'Lulus Ambang Batas 🎉'}:{cls:'fail',txt:'Belum Lolos Ambang Batas'});
     const ringColor = r.overallPass===false?'var(--red)':(r.overallPass?'var(--green)':'var(--accent)');
+    const C=2*Math.PI*80;
     v.appendChild(h(`
       <div class="card result-hero">
         <div class="ring-wrap">
-          <svg width="170" height="170" viewBox="0 0 170 170">
-            <circle cx="85" cy="85" r="74" fill="none" stroke="var(--card-2)" stroke-width="14"/>
-            <circle cx="85" cy="85" r="74" fill="none" stroke="${ringColor}" stroke-width="14" stroke-linecap="round"
-              stroke-dasharray="${2*Math.PI*74}" stroke-dashoffset="${2*Math.PI*74*(1-pct/100)}"
-              transform="rotate(-90 85 85)" style="transition:stroke-dashoffset 1s"/>
+          <svg width="184" height="184" viewBox="0 0 184 184">
+            <circle cx="92" cy="92" r="80" fill="none" stroke="var(--fill)" stroke-width="14"/>
+            <circle class="ring-prog" cx="92" cy="92" r="80" fill="none" stroke="${ringColor}" stroke-width="14" stroke-linecap="round"
+              stroke-dasharray="${C}" stroke-dashoffset="${C}" data-c="${C}"
+              transform="rotate(-90 92 92)" style="transition:stroke-dashoffset 1.1s var(--ease-out)"/>
           </svg>
-          <div class="pct"><b>${pct}%</b><span>${r.totEarned} / ${r.totMax} poin</span></div>
+          <div class="pct"><b>0%</b><span>${r.totEarned} / ${r.totMax} poin</span></div>
         </div>
         <div class="verdict ${verdict.cls}">${verdict.txt}</div>
         <div class="result-sub">${S.mode==='full'?'Simulasi penuh':'Latihan '+esc(r.cats[0].name)} · ${ex.short}</div>
@@ -414,10 +447,11 @@
       rows.appendChild(h(`
         <div class="score-row">
           <div class="nm">${esc(def?def.name:g.name)}<div style="font-size:12.5px;color:var(--muted);font-weight:500">${g.correct}/${g.total} benar${g.thresholdPct!=null?' · ambang '+Math.round(g.thresholdPct)+'%':''}</div></div>
-          <div class="bar"><i style="width:${cpct}%;background:${barColor}"></i></div>
+          <div class="bar"><i data-w="${cpct}" style="width:0;background:${barColor}"></i></div>
           <div class="val">${tag}</div>
         </div>`));
     });
+    staggerKids(rows);
     v.appendChild(rows);
 
     // stats
@@ -429,7 +463,7 @@
         <div class="stat"><b>${totalQ-answered}</b><span>Kosong</span></div>
       </div>`));
 
-    if(r.overallPass===null) v.appendChild(h(`<p class="result-sub" style="text-align:center;margin-top:14px">ℹ️ PCPM BI tidak memakai ambang batas baku — fokus penguasaan materi & kecepatan (kompetitif).</p>`));
+    if(r.overallPass===null) v.appendChild(h(`<p class="result-sub" style="text-align:center;margin-top:14px">ℹ️ PCPM BI tidak memakai ambang batas baku - fokus penguasaan materi & kecepatan (kompetitif).</p>`));
 
     // actions
     const wrongCount=S.items.filter((it,i)=>{ const sel=S.answers[i]; if(sel==null)return true; return it.type==='tkp'?it.opts[sel].score<5:!it.opts[sel].isCorrect; }).length;
@@ -449,7 +483,7 @@
     b3.onclick=()=>renderExam(S.examId);
     v.appendChild(b2); v.appendChild(bs); v.appendChild(b3);
     v.appendChild(footer());
-    setView(v,true);
+    setView(v,true, ()=>animateResults(pct));
     backTo(()=>renderExam(S.examId));
   }
 
@@ -465,7 +499,7 @@
     const body=h(`<div class="wrap"></div>`);
     const it=S.items[idx], sel=S.answers[idx];
     const card=h(`<div class="card q-card view"></div>`);
-    card.appendChild(h(`<div class="q-num">${S.mode!=='category'?esc(it.catName)+' · ':''}Soal ${idx+1}${it.type==='tkp'?' · TKP (skor 1–5)':''}${it.type==='fig'?' · Figural':''}</div>`));
+    card.appendChild(h(`<div class="q-num">${S.mode!=='category'?esc(it.catName)+' · ':''}Soal ${idx+1}${it.type==='tkp'?' · TKP (skor 1-5)':''}${it.type==='fig'?' · Figural':''}</div>`));
     card.appendChild(h(`<div class="q-text">${esc(it.q)}</div>`));
     if(it.img) card.appendChild(h(`<div class="q-img">${it.img}</div>`));
     const opts=h(`<div class="opts ${it.type==='fig'?'grid2':''}"></div>`);
@@ -555,7 +589,7 @@
       const col=r.pass===false?'var(--red)':(r.pass?'var(--green)':'var(--accent)');
       list.appendChild(h(`
         <div class="cat-item" style="cursor:default">
-          <div class="cat-emoji" style="font-size:18px;font-weight:800;color:${col}">${r.pct}%</div>
+          <div class="cat-emoji" style="font-size:18px;font-weight:800;color:${col};background:var(--fill);box-shadow:none">${r.pct}%</div>
           <div class="cat-meta"><h4>${esc(r.label||'Latihan')}</h4><p>${ds} · ${r.n||'-'} soal · ${r.earned}/${r.max} poin</p></div>
           <div class="cat-badge">${r.pass==null?'':(r.pass?'<span class="tag-pass">LULUS</span>':'<span class="tag-fail">GAGAL</span>')}</div>
         </div>`));
@@ -574,7 +608,7 @@
   /* ====================== shared UI ====================== */
   function footer(){
     return h(`<div class="footer">
-      Soal di sini adalah <b>latihan</b> yang meniru format & materi resmi — soal asli ujian bersifat rahasia.<br>
+      Soal di sini adalah <b>latihan</b> yang meniru format & materi resmi - soal asli ujian bersifat rahasia.<br>
       Selalu verifikasi jadwal & ketentuan di kanal resmi:
       <a href="https://sscasn.bkn.go.id" target="_blank" rel="noopener">sscasn.bkn.go.id</a> ·
       <a href="https://pcpmbi.rekrutmenbi.id" target="_blank" rel="noopener">pcpmbi.rekrutmenbi.id</a><br>

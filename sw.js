@@ -1,7 +1,7 @@
 /* Service worker — offline cache.
    NOTE: setelah mengubah isi soal/app, naikkan versi CACHE (v1 -> v2)
    agar perangkat mengambil versi terbaru. */
-const CACHE = 'cpns-bi-cache-v2';
+const CACHE = 'cpns-bi-cache-v3';
 const ASSETS = [
   './',
   './index.html',

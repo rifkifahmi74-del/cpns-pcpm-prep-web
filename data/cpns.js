@@ -1,5 +1,5 @@
 /* =====================================================================
-   BANK SOAL & MATERI — CPNS (Seleksi Kompetensi Dasar / SKD)
+   BANK SOAL & MATERI - CPNS (Seleksi Kompetensi Dasar / SKD)
    ---------------------------------------------------------------------
    Sumber acuan struktur & passing grade: Kepmenpan RB No. 321 Tahun 2024
    (110 soal: TWK 30, TIU 35, TKP 45 • durasi 100 menit • skor maks 550).
@@ -14,7 +14,7 @@
 window.EXAM_DB = window.EXAM_DB || {};
 window.EXAM_DB.cpns = {
   id: 'cpns',
-  name: 'CPNS — Seleksi Kompetensi Dasar (SKD)',
+  name: 'CPNS - Seleksi Kompetensi Dasar (SKD)',
   short: 'CPNS · SKD',
   tagline: 'Tes Wawasan Kebangsaan • Intelegensi Umum • Karakteristik Pribadi',
   accent: '#0a84ff',
@@ -61,8 +61,8 @@ window.EXAM_DB.cpns = {
         <h3>5. Sejarah kebangsaan penting</h3>
         <ul>
           <li><b>Sumpah Pemuda</b>: 28 Oktober 1928 (Kongres Pemuda II).</li>
-          <li><b>BPUPKI</b> sidang I: 29 Mei – 1 Juni 1945 (membahas dasar negara).</li>
-          <li><b>Proklamasi</b>: 17 Agustus 1945 oleh Soekarno–Hatta.</li>
+          <li><b>BPUPKI</b> sidang I: 29 Mei - 1 Juni 1945 (membahas dasar negara).</li>
+          <li><b>Proklamasi</b>: 17 Agustus 1945 oleh Soekarno-Hatta.</li>
         </ul>
         <p class="tip">💡 Tips: TWK banyak soal hafalan + penerapan sikap. Kuasai tanggal/nama tokoh dan pahami makna tiap sila secara aplikatif.</p>
       `,
@@ -76,8 +76,8 @@ window.EXAM_DB.cpns = {
         { t:'mc', q:'Pada lambang Garuda Pancasila, jumlah bulu pada leher berjumlah 45 yang melambangkan…', o:['Bulan kemerdekaan','Tanggal kemerdekaan','Tahun kemerdekaan (1945)','Jumlah provinsi','Jumlah sila'], a:2, e:'Jumlah bulu Garuda melambangkan 17-8-1945: sayap 17 (tanggal), ekor 8 (bulan), leher 45 (tahun), pangkal ekor 19.' },
         { t:'mc', q:'Peristiwa Sumpah Pemuda yang menyatakan satu nusa, satu bangsa, dan satu bahasa terjadi pada…', o:['20 Mei 1908','28 Oktober 1928','17 Agustus 1945','1 Juni 1945','10 November 1945'], a:1, e:'Sumpah Pemuda diikrarkan pada 28 Oktober 1928 dalam Kongres Pemuda II. 20 Mei 1908 adalah Hari Kebangkitan Nasional (Budi Utomo).' },
         { t:'mc', q:'Bentuk negara dan bentuk pemerintahan Indonesia menurut Pasal 1 ayat (1) UUD 1945 adalah…', o:['Federasi dan republik','Kesatuan dan republik','Kesatuan dan monarki','Serikat dan presidensial','Kesatuan dan parlementer'], a:1, e:'Pasal 1 ayat (1) UUD 1945: "Negara Indonesia ialah Negara Kesatuan, yang berbentuk Republik." Bentuk negara kesatuan, bentuk pemerintahan republik.' },
-        { t:'mc', q:'Sidang pertama BPUPKI (29 Mei – 1 Juni 1945) membahas tentang…', o:['Pengesahan UUD','Pemilihan presiden','Rumusan dasar negara','Pembentukan provinsi','Pembubaran PPKI'], a:2, e:'Sidang pertama BPUPKI membahas dasar negara Indonesia merdeka, dengan usulan dari Muh. Yamin, Soepomo, dan Soekarno.' },
-        { t:'mc', q:'Lembaga yang mengesahkan UUD 1945, memilih presiden & wakil presiden pertama pada 18 Agustus 1945 adalah…', o:['BPUPKI','PPKI','KNIP','MPR','DPR'], a:1, e:'PPKI (Panitia Persiapan Kemerdekaan Indonesia) pada 18 Agustus 1945 mengesahkan UUD 1945 dan memilih Soekarno–Hatta sebagai presiden dan wakil presiden.' },
+        { t:'mc', q:'Sidang pertama BPUPKI (29 Mei - 1 Juni 1945) membahas tentang…', o:['Pengesahan UUD','Pemilihan presiden','Rumusan dasar negara','Pembentukan provinsi','Pembubaran PPKI'], a:2, e:'Sidang pertama BPUPKI membahas dasar negara Indonesia merdeka, dengan usulan dari Muh. Yamin, Soepomo, dan Soekarno.' },
+        { t:'mc', q:'Lembaga yang mengesahkan UUD 1945, memilih presiden & wakil presiden pertama pada 18 Agustus 1945 adalah…', o:['BPUPKI','PPKI','KNIP','MPR','DPR'], a:1, e:'PPKI (Panitia Persiapan Kemerdekaan Indonesia) pada 18 Agustus 1945 mengesahkan UUD 1945 dan memilih Soekarno-Hatta sebagai presiden dan wakil presiden.' },
         { t:'mc', q:'Sila keempat Pancasila dilambangkan dengan gambar…', o:['Bintang','Rantai','Pohon beringin','Kepala banteng','Padi dan kapas'], a:3, e:'Sila ke-4 (Kerakyatan) dilambangkan kepala banteng. Bintang=sila 1, rantai=sila 2, beringin=sila 3, padi-kapas=sila 5.' },
         { t:'mc', q:'Nilai yang terkandung dalam sila kedua Pancasila, "Kemanusiaan yang adil dan beradab", tercermin dalam sikap…', o:['Beribadah sesuai agama','Mengutamakan musyawarah','Menghormati hak asasi setiap orang tanpa membedakan suku','Bangga menggunakan produk dalam negeri','Membayar pajak tepat waktu'], a:2, e:'Sila ke-2 menekankan pengakuan persamaan derajat dan hak asasi manusia tanpa membedakan suku, agama, ras. Menghormati HAM adalah cerminannya.' },
         { t:'mc', q:'Pembukaan UUD 1945 alinea keempat memuat empat tujuan negara. Salah satunya adalah…', o:['Menjaga ketertiban dunia berdasarkan kemerdekaan','Memajukan kesejahteraan umum','Menegakkan supremasi militer','Mengutamakan kepentingan golongan','Mempertahankan sistem feodal'], a:1, e:'Empat tujuan negara: melindungi segenap bangsa, memajukan kesejahteraan umum, mencerdaskan kehidupan bangsa, dan ikut melaksanakan ketertiban dunia. "Memajukan kesejahteraan umum" termasuk di dalamnya.' },
@@ -96,7 +96,7 @@ window.EXAM_DB.cpns = {
         { t:'mc', q:'Sejak amandemen, presiden dan wakil presiden Indonesia dipilih melalui…', o:['MPR','DPR','Pemilihan langsung oleh rakyat','Dewan Pertimbangan','Partai politik'], a:2, e:'Sejak Pemilu 2004, presiden & wakil presiden dipilih langsung oleh rakyat dalam satu paket (Pasal 6A UUD 1945).' },
         { t:'mc', q:'Berdasarkan UU No. 3 Tahun 2022, ibu kota negara Indonesia dipindahkan ke Nusantara yang berlokasi di…', o:['Jawa Barat','Kalimantan Timur','Sulawesi Selatan','Sumatra Utara','Kalimantan Selatan'], a:1, e:'UU No. 3 Tahun 2022 tentang Ibu Kota Negara menetapkan IKN Nusantara di Provinsi Kalimantan Timur.' },
         { t:'mc', q:'Pancasila disebut sebagai ideologi terbuka, artinya…', o:['Boleh diganti ideologi lain','Nilai dasarnya tetap, namun penerapannya dapat menyesuaikan perkembangan zaman','Terbuka untuk semua paham termasuk yang bertentangan','Hanya berlaku di era tertentu','Tidak memiliki nilai baku'], a:1, e:'Ideologi terbuka: nilai dasar (Pancasila) bersifat tetap, tetapi nilai instrumental & praksisnya dapat berkembang sesuai zaman tanpa mengubah nilai dasarnya.' },
-        { t:'mc', q:'Sila kelima Pancasila, "Keadilan sosial bagi seluruh rakyat Indonesia", dilambangkan dengan…', o:['Bintang','Rantai','Padi dan kapas','Kepala banteng','Pohon beringin'], a:2, e:'Sila ke-5 dilambangkan padi dan kapas, simbol kebutuhan pangan & sandang — kemakmuran dan keadilan sosial.' },
+        { t:'mc', q:'Sila kelima Pancasila, "Keadilan sosial bagi seluruh rakyat Indonesia", dilambangkan dengan…', o:['Bintang','Rantai','Padi dan kapas','Kepala banteng','Pohon beringin'], a:2, e:'Sila ke-5 dilambangkan padi dan kapas, simbol kebutuhan pangan & sandang - kemakmuran dan keadilan sosial.' },
         { t:'mc', q:'Hak Asasi Manusia di Indonesia secara khusus diatur dalam…', o:['UU No. 39 Tahun 1999','UU No. 26 Tahun 2000','UU No. 40 Tahun 2008','UU No. 12 Tahun 2005','UU No. 24 Tahun 2009'], a:0, e:'UU No. 39 Tahun 1999 tentang Hak Asasi Manusia menjadi landasan utama perlindungan HAM di Indonesia.' },
         { t:'mc', q:'Setiap tanggal 1 Oktober diperingati sebagai…', o:['Hari Lahir Pancasila','Hari Kesaktian Pancasila','Hari Sumpah Pemuda','Hari Konstitusi','Hari Bela Negara'], a:1, e:'1 Oktober = Hari Kesaktian Pancasila (memperingati keberhasilan mempertahankan Pancasila). 1 Juni = Hari Lahir Pancasila.' },
         { t:'mc', q:'Butir ketiga Sumpah Pemuda berbunyi menjunjung…', o:['Satu tanah air','Satu bangsa','Bahasa persatuan, bahasa Indonesia','Satu cita-cita','Satu kebudayaan'], a:2, e:'Butir ketiga: "menjunjung bahasa persatuan, bahasa Indonesia." (Butir 1: satu tanah air; butir 2: satu bangsa.)' },
@@ -136,37 +136,37 @@ window.EXAM_DB.cpns = {
         <p class="tip">💡 TIU memakai sistem benar=5/salah=0, jadi <b>jangan biarkan soal kosong</b> kalau bisa menebak terarah.</p>
       `,
       questions: [
-        { t:'mc', q:'ANALOGI — DOKTER : STETOSKOP = PELUKIS : …', o:['Kanvas','Kuas','Cat','Galeri','Pameran'], a:1, e:'Stetoskop adalah alat kerja utama dokter. Alat kerja utama pelukis untuk menggoreskan cat adalah kuas. Kanvas/cat adalah medium/bahan, bukan alat utama.' },
-        { t:'mc', q:'SINONIM — kata "FLUKTUASI" paling tepat bermakna…', o:['Penurunan tetap','Ketidaktetapan/naik-turun','Kenaikan tajam','Keseimbangan','Pemberhentian'], a:1, e:'Fluktuasi = gejala naik-turun / perubahan yang tidak tetap (misalnya harga atau nilai).' },
-        { t:'mc', q:'ANTONIM — lawan kata "GANJIL" adalah…', o:['Aneh','Ganjal','Genap','Tunggal','Lazim'], a:2, e:'Dalam konteks bilangan, lawan "ganjil" adalah "genap". Pilihan lain menjebak makna "aneh".' },
-        { t:'mc', q:'DERET — Lanjutan dari 3, 6, 12, 24, 48, … adalah…', o:['60','72','96','108','144'], a:2, e:'Pola dikali 2 setiap suku: 48 × 2 = 96.' },
-        { t:'mc', q:'DERET — Tentukan suku berikutnya: 1, 4, 9, 16, 25, …', o:['30','36','40','45','49'], a:1, e:'Deret bilangan kuadrat: 1²,2²,3²,4²,5²,… Suku berikutnya 6² = 36.' },
-        { t:'mc', q:'DERET LARIK — 2, 5, 11, 23, 47, …', o:['90','93','95','94','96'], a:2, e:'Polanya ×2 lalu +1: 2→5 (2×2+1), 5→11, 11→23, 23→47, 47×2+1 = 95.' },
-        { t:'mc', q:'SILOGISME — Semua pegawai negeri wajib disiplin. Budi adalah pegawai negeri. Maka…', o:['Budi belum tentu disiplin','Budi wajib disiplin','Budi tidak disiplin','Sebagian pegawai disiplin','Budi bukan pegawai'], a:1, e:'Premis: semua PNS wajib disiplin; Budi PNS. Kesimpulan valid: Budi wajib disiplin (modus: semua A adalah B; Budi A → Budi B).' },
-        { t:'mc', q:'SILOGISME — Jika hujan maka jalan basah. Jalan tidak basah. Maka…', o:['Hujan','Tidak hujan','Mungkin hujan','Jalan kering karena panas','Tidak dapat disimpulkan'], a:1, e:'Modus tollens: p→q, ~q, maka ~p. Karena jalan tidak basah, maka tidak hujan.' },
-        { t:'mc', q:'ARITMETIKA — 35% dari 240 adalah…', o:['74','82','84','86','96'], a:2, e:'35% × 240 = 0,35 × 240 = 84.' },
-        { t:'mc', q:'SOAL CERITA — Sebuah barang dibeli Rp80.000 dan dijual Rp100.000. Persentase keuntungannya adalah…', o:['20%','25%','30%','40%','50%'], a:1, e:'Untung = 100.000 − 80.000 = 20.000. Persentase untung = 20.000/80.000 × 100% = 25% (dihitung dari harga beli).' },
-        { t:'mc', q:'KECEPATAN — Mobil menempuh 180 km dalam 2,5 jam. Kecepatan rata-ratanya adalah…', o:['60 km/jam','68 km/jam','72 km/jam','75 km/jam','90 km/jam'], a:2, e:'Kecepatan = jarak ÷ waktu = 180 ÷ 2,5 = 72 km/jam.' },
-        { t:'mc', q:'PERBANDINGAN — Uang A : B = 3 : 5. Jika selisih uang mereka Rp40.000, maka uang B adalah…', o:['Rp60.000','Rp80.000','Rp100.000','Rp120.000','Rp140.000'], a:2, e:'Selisih perbandingan = 5 − 3 = 2 bagian = Rp40.000, jadi 1 bagian = Rp20.000. Uang B = 5 × 20.000 = Rp100.000.' },
-        { t:'mc', q:'PECAHAN — Hasil dari 2/3 + 1/4 adalah…', o:['3/7','5/12','11/12','7/12','3/4'], a:2, e:'Samakan penyebut (12): 8/12 + 3/12 = 11/12.' },
-        { t:'mc', q:'RATA-RATA — Nilai 5 siswa: 70, 80, 90, 60, 100. Rata-ratanya…', o:['78','80','82','84','86'], a:1, e:'Jumlah = 70+80+90+60+100 = 400. Rata-rata = 400 ÷ 5 = 80.' },
-        { t:'mc', q:'ANALITIS — Andi lebih tinggi dari Budi. Citra lebih pendek dari Budi. Dedi lebih tinggi dari Andi. Siapa yang paling pendek?', o:['Andi','Budi','Citra','Dedi','Tidak dapat ditentukan'], a:2, e:'Urutan tinggi: Dedi > Andi > Budi > Citra. Yang paling pendek adalah Citra.' },
-        { t:'mc', q:'ANALITIS — Lima orang antre: P di depan Q, R di belakang S, Q di depan R, S di belakang P. Siapa paling depan?', o:['P','Q','R','S','Tidak dapat ditentukan'], a:0, e:'Dari "P di depan Q", "Q di depan R", "S di belakang P" dan "R di belakang S": urutan P, Q, S, R memenuhi semua syarat (S setelah P & sebelum R, R paling belakang). P paling depan.' },
-        { t:'mc', q:'DERET HURUF — A, C, F, J, O, … huruf berikutnya adalah…', o:['S','T','U','V','W'], a:2, e:'Selisih posisi huruf bertambah: A(+2)C(+3)F(+4)J(+5)O(+6)U. Jadi huruf berikutnya U.' },
-        { t:'mc', q:'NUMERIK — Jika 3x − 7 = 14, maka nilai x adalah…', o:['5','6','7','8','9'], a:2, e:'3x − 7 = 14 → 3x = 21 → x = 7.' },
-        { t:'mc', q:'SOAL CERITA — Pekerjaan selesai oleh 6 orang dalam 12 hari. Jika dikerjakan 8 orang (kecepatan sama), berapa hari?', o:['8 hari','9 hari','10 hari','11 hari','16 hari'], a:1, e:'Perbandingan berbalik nilai: total kerja = 6×12 = 72 orang-hari. Dengan 8 orang: 72 ÷ 8 = 9 hari.' },
-        { t:'mc', q:'ANALOGI — PANAS : DINGIN = TERANG : …', o:['Cahaya','Lampu','Gelap','Silau','Redup'], a:2, e:'Hubungan antonim (berlawanan). Lawan "panas" = "dingin"; lawan "terang" = "gelap".' },
-        { t:'mc', q:'SINONIM — "KONKLUSI" bermakna…', o:['Pendahuluan','Kesimpulan','Perdebatan','Ringkasan awal','Hipotesis'], a:1, e:'Konklusi = kesimpulan, bagian akhir penalaran.' },
-        { t:'mc', q:'ANTONIM — lawan kata "ABSTRAK" adalah…', o:['Maya','Konkret','Rumit','Teoretis','Semu'], a:1, e:'Abstrak (tidak berwujud) berlawanan dengan konkret (nyata/berwujud).' },
-        { t:'mc', q:'DERET FIBONACCI — 1, 1, 2, 3, 5, 8, … suku berikutnya…', o:['11','12','13','14','15'], a:2, e:'Tiap suku = jumlah dua suku sebelumnya: 5 + 8 = 13.' },
-        { t:'mc', q:'DERET — 81, 27, 9, 3, … suku berikutnya…', o:['0','1','2','1/3','6'], a:1, e:'Pola dibagi 3: 3 ÷ 3 = 1.' },
-        { t:'mc', q:'DISKON BERTINGKAT — Harga Rp200.000 didiskon 25% lalu didiskon lagi 10%. Harga akhir…', o:['Rp130.000','Rp135.000','Rp140.000','Rp150.000','Rp145.000'], a:1, e:'Setelah diskon 25%: 200.000 × 0,75 = 150.000. Lalu diskon 10%: 150.000 × 0,90 = 135.000.' },
-        { t:'mc', q:'SILOGISME — Semua dokter pandai. Sebagian dokter adalah peneliti. Maka…', o:['Semua peneliti pandai','Sebagian peneliti pandai','Tidak ada peneliti pandai','Semua yang pandai adalah dokter','Peneliti tidak pandai'], a:1, e:'Sebagian dokter adalah peneliti, dan semua dokter pandai → sebagian peneliti (yang merupakan dokter) pasti pandai. Tidak bisa disimpulkan tentang seluruh peneliti.' },
-        { t:'mc', q:'ANALITIS — Dalam lomba, A finis sebelum B, B sebelum C, dan D sesudah C. Urutan juara 1 sampai 4 adalah…', o:['A, B, C, D','A, C, B, D','B, A, C, D','A, B, D, C','D, C, B, A'], a:0, e:'A sebelum B, B sebelum C, D sesudah C → urutan A, B, C, D.' },
-        { t:'mc', q:'JAM/WAKTU — Sebuah kereta berangkat pukul 08.45 dan tiba pukul 12.20. Lama perjalanan…', o:['3 jam 25 menit','3 jam 35 menit','3 jam 45 menit','4 jam 35 menit','3 jam 15 menit'], a:1, e:'Dari 08.45 ke 12.45 = 4 jam, dikurangi 25 menit (karena tiba 12.20) = 3 jam 35 menit.' },
-        { t:'mc', q:'PERBANDINGAN — Skala peta 1 : 500.000. Jarak dua kota di peta 4 cm. Jarak sebenarnya…', o:['2 km','20 km','200 km','2.000 km','0,2 km'], a:1, e:'4 cm × 500.000 = 2.000.000 cm = 20 km.' },
-        { t:'mc', q:'PELUANG — Sebuah dadu dilempar. Peluang muncul mata dadu genap adalah…', o:['1/6','1/3','1/2','2/3','5/6'], a:2, e:'Mata genap = {2,4,6} → 3 dari 6 kemungkinan = 1/2.' },
-        { t:'fig', q:'FIGURAL — Perhatikan pola perputaran titik pada bujur sangkar. Gambar manakah yang melanjutkan pola tersebut?',
+        { t:'mc', q:'ANALOGI - DOKTER : STETOSKOP = PELUKIS : …', o:['Kanvas','Kuas','Cat','Galeri','Pameran'], a:1, e:'Stetoskop adalah alat kerja utama dokter. Alat kerja utama pelukis untuk menggoreskan cat adalah kuas. Kanvas/cat adalah medium/bahan, bukan alat utama.' },
+        { t:'mc', q:'SINONIM - kata "FLUKTUASI" paling tepat bermakna…', o:['Penurunan tetap','Ketidaktetapan/naik-turun','Kenaikan tajam','Keseimbangan','Pemberhentian'], a:1, e:'Fluktuasi = gejala naik-turun / perubahan yang tidak tetap (misalnya harga atau nilai).' },
+        { t:'mc', q:'ANTONIM - lawan kata "GANJIL" adalah…', o:['Aneh','Ganjal','Genap','Tunggal','Lazim'], a:2, e:'Dalam konteks bilangan, lawan "ganjil" adalah "genap". Pilihan lain menjebak makna "aneh".' },
+        { t:'mc', q:'DERET - Lanjutan dari 3, 6, 12, 24, 48, … adalah…', o:['60','72','96','108','144'], a:2, e:'Pola dikali 2 setiap suku: 48 × 2 = 96.' },
+        { t:'mc', q:'DERET - Tentukan suku berikutnya: 1, 4, 9, 16, 25, …', o:['30','36','40','45','49'], a:1, e:'Deret bilangan kuadrat: 1²,2²,3²,4²,5²,… Suku berikutnya 6² = 36.' },
+        { t:'mc', q:'DERET LARIK - 2, 5, 11, 23, 47, …', o:['90','93','95','94','96'], a:2, e:'Polanya ×2 lalu +1: 2→5 (2×2+1), 5→11, 11→23, 23→47, 47×2+1 = 95.' },
+        { t:'mc', q:'SILOGISME - Semua pegawai negeri wajib disiplin. Budi adalah pegawai negeri. Maka…', o:['Budi belum tentu disiplin','Budi wajib disiplin','Budi tidak disiplin','Sebagian pegawai disiplin','Budi bukan pegawai'], a:1, e:'Premis: semua PNS wajib disiplin; Budi PNS. Kesimpulan valid: Budi wajib disiplin (modus: semua A adalah B; Budi A → Budi B).' },
+        { t:'mc', q:'SILOGISME - Jika hujan maka jalan basah. Jalan tidak basah. Maka…', o:['Hujan','Tidak hujan','Mungkin hujan','Jalan kering karena panas','Tidak dapat disimpulkan'], a:1, e:'Modus tollens: p→q, ~q, maka ~p. Karena jalan tidak basah, maka tidak hujan.' },
+        { t:'mc', q:'ARITMETIKA - 35% dari 240 adalah…', o:['74','82','84','86','96'], a:2, e:'35% × 240 = 0,35 × 240 = 84.' },
+        { t:'mc', q:'SOAL CERITA - Sebuah barang dibeli Rp80.000 dan dijual Rp100.000. Persentase keuntungannya adalah…', o:['20%','25%','30%','40%','50%'], a:1, e:'Untung = 100.000 − 80.000 = 20.000. Persentase untung = 20.000/80.000 × 100% = 25% (dihitung dari harga beli).' },
+        { t:'mc', q:'KECEPATAN - Mobil menempuh 180 km dalam 2,5 jam. Kecepatan rata-ratanya adalah…', o:['60 km/jam','68 km/jam','72 km/jam','75 km/jam','90 km/jam'], a:2, e:'Kecepatan = jarak ÷ waktu = 180 ÷ 2,5 = 72 km/jam.' },
+        { t:'mc', q:'PERBANDINGAN - Uang A : B = 3 : 5. Jika selisih uang mereka Rp40.000, maka uang B adalah…', o:['Rp60.000','Rp80.000','Rp100.000','Rp120.000','Rp140.000'], a:2, e:'Selisih perbandingan = 5 − 3 = 2 bagian = Rp40.000, jadi 1 bagian = Rp20.000. Uang B = 5 × 20.000 = Rp100.000.' },
+        { t:'mc', q:'PECAHAN - Hasil dari 2/3 + 1/4 adalah…', o:['3/7','5/12','11/12','7/12','3/4'], a:2, e:'Samakan penyebut (12): 8/12 + 3/12 = 11/12.' },
+        { t:'mc', q:'RATA-RATA - Nilai 5 siswa: 70, 80, 90, 60, 100. Rata-ratanya…', o:['78','80','82','84','86'], a:1, e:'Jumlah = 70+80+90+60+100 = 400. Rata-rata = 400 ÷ 5 = 80.' },
+        { t:'mc', q:'ANALITIS - Andi lebih tinggi dari Budi. Citra lebih pendek dari Budi. Dedi lebih tinggi dari Andi. Siapa yang paling pendek?', o:['Andi','Budi','Citra','Dedi','Tidak dapat ditentukan'], a:2, e:'Urutan tinggi: Dedi > Andi > Budi > Citra. Yang paling pendek adalah Citra.' },
+        { t:'mc', q:'ANALITIS - Lima orang antre: P di depan Q, R di belakang S, Q di depan R, S di belakang P. Siapa paling depan?', o:['P','Q','R','S','Tidak dapat ditentukan'], a:0, e:'Dari "P di depan Q", "Q di depan R", "S di belakang P" dan "R di belakang S": urutan P, Q, S, R memenuhi semua syarat (S setelah P & sebelum R, R paling belakang). P paling depan.' },
+        { t:'mc', q:'DERET HURUF - A, C, F, J, O, … huruf berikutnya adalah…', o:['S','T','U','V','W'], a:2, e:'Selisih posisi huruf bertambah: A(+2)C(+3)F(+4)J(+5)O(+6)U. Jadi huruf berikutnya U.' },
+        { t:'mc', q:'NUMERIK - Jika 3x − 7 = 14, maka nilai x adalah…', o:['5','6','7','8','9'], a:2, e:'3x − 7 = 14 → 3x = 21 → x = 7.' },
+        { t:'mc', q:'SOAL CERITA - Pekerjaan selesai oleh 6 orang dalam 12 hari. Jika dikerjakan 8 orang (kecepatan sama), berapa hari?', o:['8 hari','9 hari','10 hari','11 hari','16 hari'], a:1, e:'Perbandingan berbalik nilai: total kerja = 6×12 = 72 orang-hari. Dengan 8 orang: 72 ÷ 8 = 9 hari.' },
+        { t:'mc', q:'ANALOGI - PANAS : DINGIN = TERANG : …', o:['Cahaya','Lampu','Gelap','Silau','Redup'], a:2, e:'Hubungan antonim (berlawanan). Lawan "panas" = "dingin"; lawan "terang" = "gelap".' },
+        { t:'mc', q:'SINONIM - "KONKLUSI" bermakna…', o:['Pendahuluan','Kesimpulan','Perdebatan','Ringkasan awal','Hipotesis'], a:1, e:'Konklusi = kesimpulan, bagian akhir penalaran.' },
+        { t:'mc', q:'ANTONIM - lawan kata "ABSTRAK" adalah…', o:['Maya','Konkret','Rumit','Teoretis','Semu'], a:1, e:'Abstrak (tidak berwujud) berlawanan dengan konkret (nyata/berwujud).' },
+        { t:'mc', q:'DERET FIBONACCI - 1, 1, 2, 3, 5, 8, … suku berikutnya…', o:['11','12','13','14','15'], a:2, e:'Tiap suku = jumlah dua suku sebelumnya: 5 + 8 = 13.' },
+        { t:'mc', q:'DERET - 81, 27, 9, 3, … suku berikutnya…', o:['0','1','2','1/3','6'], a:1, e:'Pola dibagi 3: 3 ÷ 3 = 1.' },
+        { t:'mc', q:'DISKON BERTINGKAT - Harga Rp200.000 didiskon 25% lalu didiskon lagi 10%. Harga akhir…', o:['Rp130.000','Rp135.000','Rp140.000','Rp150.000','Rp145.000'], a:1, e:'Setelah diskon 25%: 200.000 × 0,75 = 150.000. Lalu diskon 10%: 150.000 × 0,90 = 135.000.' },
+        { t:'mc', q:'SILOGISME - Semua dokter pandai. Sebagian dokter adalah peneliti. Maka…', o:['Semua peneliti pandai','Sebagian peneliti pandai','Tidak ada peneliti pandai','Semua yang pandai adalah dokter','Peneliti tidak pandai'], a:1, e:'Sebagian dokter adalah peneliti, dan semua dokter pandai → sebagian peneliti (yang merupakan dokter) pasti pandai. Tidak bisa disimpulkan tentang seluruh peneliti.' },
+        { t:'mc', q:'ANALITIS - Dalam lomba, A finis sebelum B, B sebelum C, dan D sesudah C. Urutan juara 1 sampai 4 adalah…', o:['A, B, C, D','A, C, B, D','B, A, C, D','A, B, D, C','D, C, B, A'], a:0, e:'A sebelum B, B sebelum C, D sesudah C → urutan A, B, C, D.' },
+        { t:'mc', q:'JAM/WAKTU - Sebuah kereta berangkat pukul 08.45 dan tiba pukul 12.20. Lama perjalanan…', o:['3 jam 25 menit','3 jam 35 menit','3 jam 45 menit','4 jam 35 menit','3 jam 15 menit'], a:1, e:'Dari 08.45 ke 12.45 = 4 jam, dikurangi 25 menit (karena tiba 12.20) = 3 jam 35 menit.' },
+        { t:'mc', q:'PERBANDINGAN - Skala peta 1 : 500.000. Jarak dua kota di peta 4 cm. Jarak sebenarnya…', o:['2 km','20 km','200 km','2.000 km','0,2 km'], a:1, e:'4 cm × 500.000 = 2.000.000 cm = 20 km.' },
+        { t:'mc', q:'PELUANG - Sebuah dadu dilempar. Peluang muncul mata dadu genap adalah…', o:['1/6','1/3','1/2','2/3','5/6'], a:2, e:'Mata genap = {2,4,6} → 3 dari 6 kemungkinan = 1/2.' },
+        { t:'fig', q:'FIGURAL - Perhatikan pola perputaran titik pada bujur sangkar. Gambar manakah yang melanjutkan pola tersebut?',
           img:'<svg viewBox="0 0 440 84" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="var(--text)" stroke-width="3"><g transform="translate(0,0)"><rect x="18" y="10" width="60" height="60" rx="6"/><circle cx="18" cy="10" r="7" fill="var(--text)" stroke="none"/></g><g transform="translate(110,0)"><rect x="18" y="10" width="60" height="60" rx="6"/><circle cx="78" cy="10" r="7" fill="var(--text)" stroke="none"/></g><g transform="translate(220,0)"><rect x="18" y="10" width="60" height="60" rx="6"/><circle cx="78" cy="70" r="7" fill="var(--text)" stroke="none"/></g><text x="378" y="52" font-size="46" fill="var(--muted)" stroke="none" text-anchor="middle">?</text></svg>',
           o:[
             '<svg viewBox="0 0 100 84" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="var(--text)" stroke-width="3"><rect x="18" y="10" width="60" height="60" rx="6"/><circle cx="18" cy="70" r="7" fill="var(--text)" stroke="none"/></svg>',
@@ -174,7 +174,7 @@ window.EXAM_DB.cpns = {
             '<svg viewBox="0 0 100 84" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="var(--text)" stroke-width="3"><rect x="18" y="10" width="60" height="60" rx="6"/><circle cx="78" cy="10" r="7" fill="var(--text)" stroke="none"/></svg>',
             '<svg viewBox="0 0 100 84" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="var(--text)" stroke-width="3"><rect x="18" y="10" width="60" height="60" rx="6"/><circle cx="78" cy="70" r="7" fill="var(--text)" stroke="none"/></svg>'
           ], a:0, e:'Titik berputar searah jarum jam: kiri-atas → kanan-atas → kanan-bawah → seharusnya kiri-bawah. Maka jawaban adalah bujur sangkar dengan titik di sudut kiri-bawah.' },
-        { t:'fig', q:'FIGURAL — Manakah bangun datar yang memiliki jumlah sisi PALING BANYAK?',
+        { t:'fig', q:'FIGURAL - Manakah bangun datar yang memiliki jumlah sisi PALING BANYAK?',
           img:null,
           o:[
             '<svg viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="var(--text)" stroke-width="3"><polygon points="50,15 71.21,23.79 80,45 71.21,66.21 50,75 28.79,66.21 20,45 28.79,23.79"/></svg>',
@@ -200,12 +200,12 @@ window.EXAM_DB.cpns = {
         <p>TKP menilai <b>karakter & perilaku kerja ideal ASN</b>. Berbeda dari TWK/TIU: <b>tidak ada jawaban benar/salah mutlak</b>. Setiap opsi bernilai <b>1 sampai 5</b>. Pilih sikap paling ideal untuk dapat skor 5. Total <b>45 soal</b>, skor maks <b>225</b>, ambang batas <b>166</b> (rata-rata harus ±3,7/soal).</p>
         <h3>Aspek yang dinilai</h3>
         <ul>
-          <li><b>Pelayanan publik</b> — mengutamakan kepuasan & kepentingan masyarakat.</li>
-          <li><b>Jejaring kerja</b> — kerja sama, membangun relasi positif.</li>
-          <li><b>Sosial budaya</b> — toleransi dalam masyarakat majemuk.</li>
-          <li><b>Teknologi informasi</b> — adaptif & memanfaatkan teknologi.</li>
-          <li><b>Profesionalisme</b> — tuntas, berintegritas, mengembangkan diri.</li>
-          <li><b>Anti-radikalisme</b> — menolak paham yang mengancam NKRI.</li>
+          <li><b>Pelayanan publik</b> - mengutamakan kepuasan & kepentingan masyarakat.</li>
+          <li><b>Jejaring kerja</b> - kerja sama, membangun relasi positif.</li>
+          <li><b>Sosial budaya</b> - toleransi dalam masyarakat majemuk.</li>
+          <li><b>Teknologi informasi</b> - adaptif & memanfaatkan teknologi.</li>
+          <li><b>Profesionalisme</b> - tuntas, berintegritas, mengembangkan diri.</li>
+          <li><b>Anti-radikalisme</b> - menolak paham yang mengancam NKRI.</li>
         </ul>
         <h3>Strategi menjawab</h3>
         <ol>
@@ -223,14 +223,14 @@ window.EXAM_DB.cpns = {
           {x:'Menunggu atasan menjelaskan lebih dulu', s:2},
           {x:'Meminta rekan lain mengerjakannya', s:1},
           {x:'Mencoba sambil melihat hasil rekan lain', s:4}
-        ], e:'Sikap ideal (5): inisiatif belajar mandiri + bertanya saat perlu — kombinasi profesionalisme & jejaring kerja. Menunggu/melempar tugas bernilai rendah karena pasif.' },
+        ], e:'Sikap ideal (5): inisiatif belajar mandiri + bertanya saat perlu - kombinasi profesionalisme & jejaring kerja. Menunggu/melempar tugas bernilai rendah karena pasif.' },
         { t:'tkp', q:'Seorang warga datang mengeluh dengan nada marah karena layanan lambat, padahal keterlambatan bukan kesalahan Anda. Anda…', o:[
           {x:'Menjelaskan bahwa itu bukan kesalahan saya', s:2},
           {x:'Meminta maaf, menenangkan, lalu membantu menyelesaikan keluhannya', s:5},
           {x:'Membiarkan ia tenang sendiri', s:1},
           {x:'Mendengarkan keluhan lalu mengarahkan ke loket lain', s:3},
           {x:'Menyampaikan keluhan ke atasan untuk ditindaklanjuti', s:4}
-        ], e:'Pelayanan publik ideal (5): tetap empati, minta maaf atas ketidaknyamanan, dan langsung membantu — fokus solusi, bukan membela diri.' },
+        ], e:'Pelayanan publik ideal (5): tetap empati, minta maaf atas ketidaknyamanan, dan langsung membantu - fokus solusi, bukan membela diri.' },
         { t:'tkp', q:'Rekan satu tim sering tidak menyelesaikan bagiannya sehingga pekerjaan tim terhambat. Anda…', o:[
           {x:'Membicarakan baik-baik untuk mencari solusi bersama', s:5},
           {x:'Melaporkan langsung ke atasan', s:3},
@@ -300,14 +300,14 @@ window.EXAM_DB.cpns = {
           {x:'Menerima saja karena sudah berusaha', s:2},
           {x:'Merasa itu tanggung jawab ketua tim', s:1},
           {x:'Fokus memperbaiki bagian saya sendiri', s:3}
-        ], e:'Ideal (5): evaluasi kolektif & solusi ke depan tanpa saling menyalahkan — cerminan profesionalisme dan jejaring kerja yang sehat.' },
+        ], e:'Ideal (5): evaluasi kolektif & solusi ke depan tanpa saling menyalahkan - cerminan profesionalisme dan jejaring kerja yang sehat.' },
         { t:'tkp', q:'Anda melihat prosedur kerja lama di kantor sebenarnya bisa dibuat lebih efisien. Anda…', o:[
           {x:'Mengikuti prosedur lama agar aman', s:2},
           {x:'Menyusun usulan perbaikan dan menyampaikannya melalui jalur yang tepat', s:5},
           {x:'Mengubah cara kerja sendiri tanpa izin', s:2},
           {x:'Mengeluhkan ketidakefisienan kepada rekan', s:1},
           {x:'Menunggu orang lain yang mengusulkan', s:2}
-        ], e:'Ideal (5): inisiatif perbaikan yang disampaikan lewat saluran resmi — inovatif sekaligus tertib aturan.' },
+        ], e:'Ideal (5): inisiatif perbaikan yang disampaikan lewat saluran resmi - inovatif sekaligus tertib aturan.' },
         { t:'tkp', q:'Anda ditugaskan di daerah terpencil dengan fasilitas terbatas. Sikap Anda…', o:[
           {x:'Meminta pindah secepatnya', s:1},
           {x:'Menjalankan tugas sebaik mungkin dan beradaptasi dengan kondisi', s:5},
@@ -328,7 +328,7 @@ window.EXAM_DB.cpns = {
           {x:'Membagikannya ke rekan kerja bila diminta', s:2},
           {x:'Menggunakannya bila menguntungkan instansi', s:2},
           {x:'Membiarkannya karena bukan tanggung jawab saya', s:2}
-        ], e:'Ideal (5): menjaga kerahasiaan data dan memakainya hanya untuk kepentingan dinas — prinsip akuntabilitas & etika ASN.' },
+        ], e:'Ideal (5): menjaga kerahasiaan data dan memakainya hanya untuk kepentingan dinas - prinsip akuntabilitas & etika ASN.' },
         { t:'tkp', q:'Anda mendapat kritik tajam dari masyarakat atas kebijakan instansi di media sosial. Anda…', o:[
           {x:'Membalas kritik tersebut dengan argumen pribadi', s:1},
           {x:'Menampung masukan, menyampaikan ke instansi, dan merespons melalui jalur resmi', s:5},
@@ -342,7 +342,7 @@ window.EXAM_DB.cpns = {
           {x:'Menerima tetapi menyerahkan keputusan penting ke orang lain', s:2},
           {x:'Menerima dan mengerjakannya sendirian', s:2},
           {x:'Menerima sambil meminta bimbingan atasan', s:4}
-        ], e:'Ideal (5): menerima tantangan, belajar, dan memberdayakan tim — pertumbuhan profesional. Meminta bimbingan (4) baik namun kepemimpinan kolaboratif lebih utuh.' },
+        ], e:'Ideal (5): menerima tantangan, belajar, dan memberdayakan tim - pertumbuhan profesional. Meminta bimbingan (4) baik namun kepemimpinan kolaboratif lebih utuh.' },
         { t:'tkp', q:'Anda dipromosikan menjadi atasan dari rekan-rekan yang dulu setingkat. Sikap Anda…', o:[
           {x:'Tetap profesional, merangkul tim, dan menjalankan peran baru dengan adil', s:5},
           {x:'Menjaga jarak agar terlihat berwibawa', s:2},
@@ -370,7 +370,7 @@ window.EXAM_DB.cpns = {
           {x:'Menunggu rapat selesai baru memberi tahu satu orang', s:3},
           {x:'Mengalihkan pembahasan ke topik lain', s:1},
           {x:'Mengakui keliru namun tidak mengoreksi datanya', s:2}
-        ], e:'Ideal (5): kejujuran & akurasi — segera koreksi agar keputusan rapat tidak didasarkan data salah.' },
+        ], e:'Ideal (5): kejujuran & akurasi - segera koreksi agar keputusan rapat tidak didasarkan data salah.' },
         { t:'tkp', q:'Anda diberi kesempatan mengikuti pelatihan pengembangan diri di luar jam kerja. Sikap Anda…', o:[
           {x:'Menolak karena menyita waktu', s:1},
           {x:'Antusias mengikuti untuk meningkatkan kompetensi', s:5},
