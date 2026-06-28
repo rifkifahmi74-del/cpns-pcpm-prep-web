@@ -74,7 +74,7 @@
 
   /* ====================== HOME ====================== */
   function renderHome(){
-    const exams=[DB.cpns, DB.pcpm].filter(Boolean);
+    const exams=[DB.cpns, DB.pcpm, DB.ojk].filter(Boolean);
     const v=h(`<div class="view wrap"></div>`);
     v.appendChild(h(`
       <header class="hero">
@@ -200,6 +200,50 @@
     });
     staggerKids(list);
     v.appendChild(list);
+
+    // --- CPNS extras: Formasi & SKB, SKB practice, articles ---
+    if(ex.formasi){
+      const fbtn=h(`<button class="btn btn-secondary" style="margin-top:18px">🏛️ Formasi Instansi Pusat &amp; Pembobotan SKB</button>`);
+      fbtn.onclick=()=>renderFormasi(examId);
+      v.appendChild(fbtn);
+    }
+    if(ex.skbCategories && ex.skbCategories.length){
+      v.appendChild(h(`<div class="section-title">Latihan SKB (per Rumpun Jabatan)</div>`));
+      const slist=h(`<div class="cat-list"></div>`);
+      ex.skbCategories.forEach((cat,idx)=>{
+        const best=getBest(examId,cat.id);
+        const item=h(`
+          <div class="cat-item">
+            <div class="cat-emoji">${cat.icon||'📘'}</div>
+            <div class="cat-meta"><h4>${esc(cat.name)}</h4><p>${esc(cat.desc)}</p></div>
+            <div style="text-align:right"><div class="cat-badge">${cat.questions.length} soal</div>${best!=null?`<div class="cat-badge" style="color:var(--green);font-weight:700">★ ${Math.round(best)}%</div>`:''}</div>
+            <div class="chev">›</div>
+          </div>`);
+        item.onclick=()=>renderCategory(examId,cat.id);
+        const tile=item.querySelector('.cat-emoji'); if(tile) tile.style.setProperty('--tile', TILE[(idx+3) % TILE.length]);
+        slist.appendChild(item);
+      });
+      staggerKids(slist);
+      v.appendChild(slist);
+    }
+    if(ex.articles && ex.articles.length){
+      v.appendChild(h(`<div class="section-title">Materi &amp; Analisis</div>`));
+      const alist=h(`<div class="cat-list"></div>`);
+      ex.articles.forEach((art,idx)=>{
+        const item=h(`
+          <div class="cat-item">
+            <div class="cat-emoji">${art.icon||'📄'}</div>
+            <div class="cat-meta"><h4>${esc(art.title)}</h4><p>${esc(art.desc)}</p></div>
+            <div class="chev">›</div>
+          </div>`);
+        item.onclick=()=>renderArticle(examId,art.id);
+        const tile=item.querySelector('.cat-emoji'); if(tile) tile.style.setProperty('--tile', TILE[(idx+5) % TILE.length]);
+        alist.appendChild(item);
+      });
+      staggerKids(alist);
+      v.appendChild(alist);
+    }
+
     v.appendChild(footer());
     setView(v,true);
     backTo(()=>renderHome());
@@ -207,7 +251,7 @@
 
   /* ====================== CATEGORY landing ====================== */
   function renderCategory(examId,catId){
-    const ex=DB[examId], cat=ex.categories.find(c=>c.id===catId);
+    const ex=DB[examId], cat=findCat(ex,catId);
     const best=getBest(examId,catId);
     const v=h(`<div class="view wrap"></div>`);
     v.appendChild(h(`
@@ -236,7 +280,7 @@
 
   /* ====================== MATERIAL ====================== */
   function renderMaterial(examId,catId){
-    const ex=DB[examId], cat=ex.categories.find(c=>c.id===catId);
+    const ex=DB[examId], cat=findCat(ex,catId);
     const v=h(`<div class="view wrap"></div>`);
     v.appendChild(h(`<header class="hero" style="padding-bottom:0"><div class="eyebrow" style="color:${ex.accent}">Materi · ${esc(cat.short)}</div><h1 style="font-size:28px">${esc(cat.name)}</h1></header>`));
     v.appendChild(h(`<div class="card material">${cat.material||'<p>Materi belum tersedia.</p>'}</div>`));
@@ -246,6 +290,66 @@
     v.appendChild(footer());
     setView(v,true);
     backTo(()=>renderCategory(examId,catId));
+  }
+
+  /* ====================== ARTIKEL (materi & analisis) ====================== */
+  function renderArticle(examId, artId){
+    const ex=DB[examId], art=(ex.articles||[]).find(a=>a.id===artId);
+    if(!art) return renderExam(examId);
+    const v=h(`<div class="view wrap"></div>`);
+    v.appendChild(h(`<header class="hero" style="padding-bottom:0"><div style="font-size:42px">${art.icon||'📄'}</div><h1 style="font-size:27px">${esc(art.title)}</h1></header>`));
+    v.appendChild(h(`<div class="card material" style="margin-top:14px">${art.html}</div>`));
+    const bk=h(`<button class="btn btn-ghost" style="margin-top:18px">← Kembali</button>`); bk.onclick=()=>renderExam(examId); v.appendChild(bk);
+    v.appendChild(footer());
+    setView(v,true);
+    backTo(()=>renderExam(examId));
+  }
+
+  /* ====================== FORMASI & PEMBOBOTAN SKB ====================== */
+  function renderFormasi(examId){
+    const ex=DB[examId], f=ex.formasi; if(!f) return renderExam(examId);
+    const b=f.bobot, s=f.summary.tahun2024;
+    const v=h(`<div class="view wrap"></div>`);
+    v.appendChild(h(`<header class="hero" style="padding-bottom:0"><div class="eyebrow" style="color:${ex.accent}">Formasi &amp; SKB</div><h1 style="font-size:26px">Formasi Instansi Pusat &amp; Pembobotan SKB</h1><p>${esc(f.updated)}</p></header>`));
+    v.appendChild(h(`
+      <div class="card start-card" style="margin-top:16px">
+        <div class="kv"><span>Pembobotan akhir</span><b>${esc(b.ringkas)}</b></div>
+        <div class="kv"><span>Dasar hukum</span><b>${esc(b.dasar)}</b></div>
+        <div class="kv"><span>Rumus SKD</span><b style="font-weight:500;text-align:right;max-width:62%">${esc(b.rumusSKD)}</b></div>
+        <div class="kv"><span>Rumus SKB</span><b style="font-weight:500;text-align:right;max-width:62%">${esc(b.rumusSKB)}</b></div>
+      </div>`));
+    v.appendChild(h(`<div class="card material" style="margin-top:12px;padding:16px 18px"><p style="margin:0;font-size:14.5px"><b>Komponen SKB:</b> ${esc(b.skbCAT)}</p></div>`));
+    v.appendChild(h(`<div class="section-title">Referensi Resmi CPNS 2024</div>`));
+    v.appendChild(h(`
+      <div class="stat-row">
+        <div class="stat"><b>${s.total.toLocaleString('id-ID')}</b><span>Total formasi</span></div>
+        <div class="stat"><b>${s.pusat.toLocaleString('id-ID')}</b><span>Formasi pusat</span></div>
+        <div class="stat"><b>${s.instansiPusat}</b><span>Instansi pusat</span></div>
+      </div>`));
+    v.appendChild(h(`<div class="card material" style="margin-top:12px;padding:16px 18px"><p style="margin:0;font-size:14.5px">⚠️ <b>Status 2026:</b> ${esc(f.summary.status2026)}</p></div>`));
+    v.appendChild(h(`<div class="section-title">Instansi Pusat &amp; Pola SKB</div>`));
+    const list=h(`<div class="cat-list"></div>`);
+    f.instansi.forEach((ins,idx)=>{
+      const item=h(`
+        <div class="cat-item" style="cursor:default; align-items:flex-start">
+          <div class="cat-emoji" style="--tile:${TILE[idx % TILE.length]}">🏛️</div>
+          <div class="cat-meta">
+            <h4>${esc(ins.nama)}</h4>
+            <p style="-webkit-line-clamp:4">SKB: ${esc(ins.skb.join(' · '))}</p>
+            <a href="${esc(ins.url)}" target="_blank" rel="noopener" style="font-size:13px;font-weight:600">Situs resmi ↗</a>
+          </div>
+        </div>`);
+      list.appendChild(item);
+    });
+    staggerKids(list);
+    v.appendChild(list);
+    v.appendChild(h(`<div class="card material" style="margin-top:12px;padding:16px 18px"><p style="margin:0;font-size:13.5px;color:var(--muted)">${esc(f.catatan)}</p></div>`));
+    const src=h(`<a class="btn btn-ghost" style="margin-top:14px" href="${esc(s.sumber.url)}" target="_blank" rel="noopener">Cek formasi resmi: ${esc(s.sumber.label)} ↗</a>`);
+    v.appendChild(src);
+    const bk=h(`<button class="btn btn-secondary" style="margin-top:12px">← Kembali</button>`); bk.onclick=()=>renderExam(examId); v.appendChild(bk);
+    v.appendChild(footer());
+    setView(v,true);
+    backTo(()=>renderExam(examId));
   }
 
   /* ====================== SESSION BUILD ====================== */
@@ -259,13 +363,15 @@
     return {catId:cat.id,catName:cat.short,type:q.t,q:q.q,img:q.img||null,opts,e:q.e};
   }
   const cloneItem=it=>{ const opts=it.opts.map(o=>({...o})); shuffle(opts); return {...it,opts}; };
-  function sessionLabel(){ if(S.mode==='full')return 'Simulasi Penuh'; if(S.mode==='wrong')return 'Ulangi Soal Salah'; const c=S.ex.categories.find(c=>c.id===S.catId); return 'Latihan '+(c?c.short:''); }
+  // look up a category across SKD categories AND SKB categories
+  function findCat(ex, catId){ return (ex.categories||[]).concat(ex.skbCategories||[]).find(c=>c.id===catId); }
+  function sessionLabel(){ if(S.mode==='full')return 'Simulasi Penuh'; if(S.mode==='wrong')return 'Ulangi Soal Salah'; const c=findCat(S.ex,S.catId); return 'Latihan '+(c?c.short:''); }
 
   function startSession(examId,catId,mode){
     const ex=DB[examId];
     let items=[], cats=[];
-    if(mode==='full'){ cats=ex.categories; }
-    else { cats=[ex.categories.find(c=>c.id===catId)]; }
+    if(mode==='full'){ cats=ex.categories; }   // full simulation = SKD only
+    else { cats=[findCat(ex,catId)]; }
     cats.forEach(cat=>{
       const qs=cat.questions.map(q=>makeItem(cat,q));
       shuffle(qs); items=items.concat(qs);
@@ -379,7 +485,7 @@
       if(sel!=null){ g.earned+=it.opts[sel].score; if(it.opts[sel].isCorrect)g.correct++; }
     });
     const cats=Object.values(groups).map(g=>{
-      const def=S.ex.categories.find(c=>c.id===g.catId);
+      const def=findCat(S.ex,g.catId);
       g.pct=g.max? g.earned/g.max*100 : 0;
       if(def&&def.passing&&def.maxScore){ g.thresholdPct=def.passing/def.maxScore*100; g.pass=g.pct>=g.thresholdPct; }
       else { g.thresholdPct=null; g.pass=null; }
@@ -440,7 +546,7 @@
     // per-category breakdown
     const rows=h(`<div class="score-rows"></div>`);
     r.cats.forEach(g=>{
-      const def=ex.categories.find(c=>c.id===g.catId);
+      const def=findCat(ex,g.catId);
       const cpct=Math.round(g.pct);
       const barColor=g.pass===false?'var(--red)':(g.pass?'var(--green)':'var(--accent)');
       const tag = g.pass==null ? `${cpct}%` : `<span class="${g.pass?'tag-pass':'tag-fail'}">${g.pass?'LULUS':'GAGAL'}</span>`;

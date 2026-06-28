@@ -102,7 +102,12 @@ window.EXAM_DB.cpns = {
         { t:'mc', q:'Butir ketiga Sumpah Pemuda berbunyi menjunjung…', o:['Satu tanah air','Satu bangsa','Bahasa persatuan, bahasa Indonesia','Satu cita-cita','Satu kebudayaan'], a:2, e:'Butir ketiga: "menjunjung bahasa persatuan, bahasa Indonesia." (Butir 1: satu tanah air; butir 2: satu bangsa.)' },
         { t:'mc', q:'Nilai-nilai dasar bela negara antara lain cinta tanah air, sadar berbangsa dan bernegara, setia pada Pancasila, rela berkorban, serta…', o:['Mengutamakan suku sendiri','Kemampuan awal bela negara','Menolak teknologi asing','Mengabdi pada golongan','Menutup diri dari dunia luar'], a:1, e:'Lima nilai dasar bela negara: cinta tanah air; kesadaran berbangsa-bernegara; yakin pada Pancasila; rela berkorban; serta memiliki kemampuan awal bela negara.' },
         { t:'mc', q:'Pemerintahan daerah dan otonomi daerah di Indonesia saat ini diatur terutama oleh…', o:['UU No. 32 Tahun 2004','UU No. 23 Tahun 2014','UU No. 22 Tahun 1999','UU No. 5 Tahun 1974','UU No. 2 Tahun 2015'], a:1, e:'UU No. 23 Tahun 2014 tentang Pemerintahan Daerah menjadi acuan utama otonomi daerah (menggantikan UU 32/2004).' },
-        { t:'mc', q:'Salah satu cerminan sikap menjaga persatuan dalam masyarakat majemuk adalah…', o:['Memaksakan budaya mayoritas','Mengutamakan toleransi dan menghargai perbedaan','Membentuk kelompok eksklusif','Menolak adat daerah lain','Menghindari interaksi antarsuku'], a:1, e:'Dalam masyarakat majemuk, toleransi dan saling menghargai perbedaan SARA adalah kunci menjaga persatuan sesuai semboyan Bhinneka Tunggal Ika.' }
+        { t:'mc', q:'Salah satu cerminan sikap menjaga persatuan dalam masyarakat majemuk adalah…', o:['Memaksakan budaya mayoritas','Mengutamakan toleransi dan menghargai perbedaan','Membentuk kelompok eksklusif','Menolak adat daerah lain','Menghindari interaksi antarsuku'], a:1, e:'Dalam masyarakat majemuk, toleransi dan saling menghargai perbedaan SARA adalah kunci menjaga persatuan sesuai semboyan Bhinneka Tunggal Ika.' },
+        { t:'mc', q:'HOTS - Anda menerima berita yang memojokkan kelompok tertentu dan berpotensi memecah belah. Penerapan nilai Pancasila yang paling tepat adalah…', o:['Langsung membagikannya agar orang lain waspada','Memverifikasi kebenarannya sebelum bersikap dan tidak menyebarkan jika belum jelas','Mengabaikan karena bukan urusan saya','Membalas dengan berita tandingan','Mempercayainya karena dari grup keluarga'], a:1, e:'Penalaran implementatif: nilai persatuan (sila ke-3) & kemanusiaan menuntut sikap kritis - verifikasi dulu (anti-hoaks) dan tidak menyebarkan informasi yang memecah belah. Membagikan tanpa verifikasi melanggar nilai persatuan.' },
+        { t:'mc', q:'HOTS - Dalam rapat tim yang anggotanya berbeda pendapat tajam, penerapan sila keempat Pancasila tercermin pada sikap…', o:['Memaksakan pendapat mayoritas dengan voting cepat','Mengutamakan musyawarah untuk mufakat dengan menghargai semua pendapat','Mengikuti pendapat atasan tanpa diskusi','Menunda keputusan tanpa batas','Memilih pendapat yang paling populer di media sosial'], a:1, e:'Sila ke-4 (kerakyatan yang dipimpin hikmat kebijaksanaan dalam permusyawaratan) mengutamakan musyawarah-mufakat yang menghargai setiap pendapat sebelum mengambil keputusan.' },
+        { t:'mc', q:'HOTS - Bentuk bela negara non-fisik yang paling relevan bagi seorang ASN di era digital adalah…', o:['Mengikuti latihan militer','Menyebarkan konten produktif & melawan disinformasi serta bekerja berintegritas','Berdemonstrasi setiap pekan','Menutup akses internet','Menghindari teknologi'], a:1, e:'Bela negara non-fisik mencakup kontribusi sesuai profesi: bekerja berintegritas, menjaga ruang digital dari disinformasi, dan produktif - sesuai Pasal 27 ayat (3) UUD 1945.' },
+        { t:'mc', q:'HOTS - Saat rekan kerja yang berbeda agama menjalankan ibadah di sela jam kerja, sikap yang mencerminkan sila pertama dan Bhinneka Tunggal Ika adalah…', o:['Menegur karena mengganggu pekerjaan','Menghormati dan memberi ruang selama tidak melanggar aturan kerja','Ikut beribadah agar adil','Melaporkan ke atasan','Mengabaikan dengan sikap dingin'], a:1, e:'Ketuhanan Yang Maha Esa (sila 1) dan Bhinneka Tunggal Ika menuntut sikap menghormati kebebasan beragama rekan, selama tetap menjaga tanggung jawab kerja.' },
+        { t:'mc', q:'HOTS - Penerapan sila kelima ("Keadilan sosial bagi seluruh rakyat Indonesia") dalam pelayanan publik paling tepat ditunjukkan dengan…', o:['Mendahulukan kerabat & kenalan','Memberi pelayanan yang sama & adil tanpa membeda-bedakan latar belakang','Melayani hanya yang membayar lebih cepat','Memprioritaskan yang berpenampilan rapi','Menutup layanan lebih awal'], a:1, e:'Keadilan sosial menuntut pelayanan yang merata, non-diskriminatif, dan adil bagi semua warga tanpa memandang status, suku, agama, atau golongan.' }
       ]
     },
 
@@ -412,7 +417,42 @@ window.EXAM_DB.cpns = {
           {x:'Bekerja seperti biasa dan berharap tercapai', s:2},
           {x:'Meminta target diturunkan lebih dulu', s:2},
           {x:'Menerima target sambil mencari dukungan sumber daya yang diperlukan', s:4}
-        ], e:'Ideal (5): orientasi pada pencapaian dengan strategi konkret. Mencari dukungan sumber daya (4) baik sebagai pelengkap.' }
+        ], e:'Ideal (5): orientasi pada pencapaian dengan strategi konkret. Mencari dukungan sumber daya (4) baik sebagai pelengkap.' },
+        { t:'tkp', q:'HOTS - Atasan meminta laporan diselesaikan hari ini, tetapi sebagian data belum tervalidasi dan berisiko keliru. Anda…', o:[
+          {x:'Menyerahkan apa adanya agar tepat waktu', s:2},
+          {x:'Menyampaikan risiko data ke atasan dan mengusulkan penyelesaian bagian yang valid dulu', s:5},
+          {x:'Menunda diam-diam tanpa memberi tahu', s:1},
+          {x:'Menyerahkan dengan menambahkan data perkiraan', s:1},
+          {x:'Meminta rekan menyelesaikan sisanya tanpa validasi', s:2}
+        ], e:'Ideal (5): jujur soal risiko + solusi konkret (serahkan bagian valid, selesaikan sisanya akurat). Menyerahkan data keliru atau mengarang data melanggar integritas & akuntabilitas.' },
+        { t:'tkp', q:'HOTS - Anda punya ide perbaikan proses yang berpotensi besar tetapi belum pasti berhasil dan butuh sumber daya. Sikap Anda…', o:[
+          {x:'Mengurungkan niat karena takut gagal', s:2},
+          {x:'Menyusun uji coba kecil (pilot) berbasis data lalu mengusulkannya secara terukur', s:5},
+          {x:'Langsung menerapkan ke seluruh unit tanpa uji', s:2},
+          {x:'Menunggu orang lain yang mengusulkan', s:1},
+          {x:'Menyimpan ide untuk diri sendiri', s:1}
+        ], e:'Ideal (5): inovatif sekaligus bertanggung jawab - uji coba terukur berbasis data mengurangi risiko sebelum diusulkan. Menerapkan tanpa uji (2) berisiko; mengurungkan/menyimpan ide rendah.' },
+        { t:'tkp', q:'HOTS - Dua anggota timmu berkonflik hingga mengganggu pelayanan kepada masyarakat. Sebagai rekan, Anda…', o:[
+          {x:'Memihak yang menurut saya benar', s:1},
+          {x:'Menjadi penengah, fokus pada kepentingan layanan, dan memfasilitasi solusi', s:5},
+          {x:'Membiarkan karena bukan urusan saya', s:1},
+          {x:'Melaporkan keduanya tanpa mencoba menengahi', s:3},
+          {x:'Menghindari keduanya', s:2}
+        ], e:'Ideal (5): utamakan kepentingan layanan publik, jadi penengah konstruktif, dan fasilitasi solusi. Lapor langsung (3) opsi lanjutan; memihak/membiarkan merusak tim & layanan.' },
+        { t:'tkp', q:'HOTS - Seseorang menekan Anda untuk membuka data pribadi masyarakat yang Anda kelola, dengan alasan mendesak. Anda…', o:[
+          {x:'Memberikannya karena terkesan mendesak', s:1},
+          {x:'Menolak dan mengarahkan melalui prosedur resmi sesuai aturan perlindungan data', s:5},
+          {x:'Memberikan sebagian saja', s:2},
+          {x:'Memberikannya bila ada imbalan', s:1},
+          {x:'Menunda tanpa penjelasan', s:3}
+        ], e:'Ideal (5): jaga kerahasiaan data & arahkan ke prosedur resmi - integritas tidak tergoyahkan oleh tekanan/urgensi. Membuka data tanpa dasar melanggar perlindungan data & etika ASN.' },
+        { t:'tkp', q:'HOTS - Anda menghadapi banyak tugas dengan tenggat berdekatan dan kualitas mulai menurun. Langkah paling tepat…', o:[
+          {x:'Mengerjakan semua sekaligus meski hasil asal jadi', s:2},
+          {x:'Memetakan prioritas berdasarkan urgensi-dampak, mengeksekusi bertahap, dan mengomunikasikan bila perlu', s:5},
+          {x:'Mengerjakan yang paling mudah saja', s:2},
+          {x:'Menunda semua sampai tenang', s:1},
+          {x:'Mengeluh dan menunggu bantuan', s:1}
+        ], e:'Ideal (5): manajemen prioritas berbasis urgensi-dampak + eksekusi bertahap + komunikasi menjaga kualitas dan ketuntasan - inti profesionalisme di bawah tekanan.' }
       ]
     }
   ]
