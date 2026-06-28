@@ -112,8 +112,7 @@
     staggerKids(grid);
     v.appendChild(grid);
     v.appendChild(footer());
-    setView(v,false);
-    startCountdownTick();
+    setView(v,false, ()=>startCountdownTick());
   }
 
   function countdownCard(cd){
@@ -398,10 +397,9 @@
     v.appendChild(head);
     const body=h(`<div class="wrap" id="examBody"></div>`);
     v.appendChild(body);
-    setView(v,true);
+    // run drawQuestion + timer AFTER the view swap (setView is async via View Transitions)
+    setView(v,true, ()=>{ drawQuestion(); startExamTimer(); });
     backTo(()=>{ confirmModal('Keluar dari ujian?','Progress latihan ini tidak disimpan.','Keluar',()=>{ renderExam(S.examId); }); });
-    drawQuestion();
-    startExamTimer();
   }
 
   function startExamTimer(){
@@ -654,8 +652,7 @@
     body.appendChild(pal);
     body.appendChild(footer());
     v.appendChild(body);
-    setView(v,true);
-    $('#toResults').onclick=()=>finishSession();
+    setView(v,true, ()=>{ const t=$('#toResults'); if(t) t.onclick=()=>finishSession(); });
     backTo(()=>finishSession());
   }
 

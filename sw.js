@@ -1,7 +1,7 @@
 /* Service worker — NETWORK-FIRST (selalu ambil versi terbaru saat online,
    fallback ke cache saat offline). Ini mencegah bug "versi lama nyangkut".
    NOTE: setelah mengubah isi soal/app, naikkan versi CACHE (v5 -> v6). */
-const CACHE = 'cpns-bi-cache-v5';
+const CACHE = 'cpns-bi-cache-v6';
 const ASSETS = [
   './',
   './index.html',
