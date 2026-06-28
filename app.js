@@ -263,7 +263,7 @@
     v.appendChild(h(`
       <div class="card start-card" style="margin-top:16px">
         <div class="kv"><span>Jumlah soal latihan</span><b>${cat.questions.length} soal</b></div>
-        <div class="kv"><span>Format resmi</span><b>${cat.jumlahSoal} soal${cat.maxScore?' · maks '+cat.maxScore:''}</b></div>
+        ${cat.jumlahSoal?`<div class="kv"><span>Format resmi</span><b>${cat.jumlahSoal} soal${cat.maxScore?' · maks '+cat.maxScore:''}</b></div>`:`<div class="kv"><span>Jenis</span><b>SKB CAT (substansi jabatan)</b></div>`}
         ${cat.passing?`<div class="kv"><span>Ambang batas</span><b>≥ ${cat.passing}</b></div>`:''}
         ${best!=null?`<div class="kv"><span>Skor terbaikmu</span><b style="color:var(--green)">${Math.round(best)}%</b></div>`:''}
       </div>`));
